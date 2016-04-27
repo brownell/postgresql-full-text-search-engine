@@ -3,6 +3,13 @@ PostgreSQL as a full-text search engine
 Dan Scott (dan@coffeecode.net)
 v1.0, 2013-08-07
 
+Modified by Brownell Chalstrom (brownell@chalstrom.com() to:
+
+. use to_tsquery instead of plainto_tsquery
+. add some print statements
+. added a collector to get data from another DB and load it into fulltext_search
+
+
 Introduction
 ------------
 This application shows how to use PostgreSQL as a full-text search engine.

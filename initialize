@@ -3,13 +3,13 @@
 Create and populate a minimal PostgreSQL schema for full text search
 """
 
-import postgresql
+import postgresql, os
 
-DB_NAME = 'pgfts'
-DB_HOST = 'localhost' # Uses a local socket
-DB_USER = 'fts_user'
-
-DB = postgresql.open(host=DB_HOST, database=DB_NAME, user=DB_USER)
+DB_NAME = os.environ['DB_NAME']
+DB_HOST = os.environ['DB_HOST']
+DB_USER = os.environ['DB_USER']
+DB_PASS = os.environ['DB_PASS']
+DB = postgresql.open(host=DB_HOST, port=5432, database=DB_NAME, user=DB_USER, password=DB_PASS)
 
 def load_db():
     """Add sample data to the database"""
